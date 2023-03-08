@@ -1,45 +1,57 @@
-#include "lists.h"
+#include <stdio.h>
 #include <stdlib.h>
+#include "lists.h"
+
+/**
+ * insert_node - insert a number into a sorted link
+ * @head: stores the address of the pointer to the variable
+ * @number: number to be inserted
+ * Return: Allow success
+*/
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *temp = *head;
-	listint_t *newNode = NULL;
+	listint_t *new, *before, *tmp, *first, *tmp_num;
+	int count = 0;
 
-	if (!head)
+	first = *head;
+	new = (listint_t *)malloc(sizeof(listint_t));
+	if (new == NULL)
 		return (NULL);
-
-	/* malloc new node */
-	newNode = malloc(sizeof(listint_t));
-	if (newNode == NULL)
-		return (NULL);
-	newNode->n = number;
-	newNode->next = NULL;
-
-	/* if no linked list, insert node as the only member */
-	if (*head == NULL)
+	new->n = number;
+	while (*head)
 	{
-		*head = newNode;
-		(*head)->next = NULL;
-		return (newNode);
+		count++;
+		if ((*head)->n > number)
+		{
+			if (count == 1)
+			{
+				*head = new;
+				new->next = first;
+				return (new);
+			}
+			else
+			{
+				tmp = *head;
+				break;
+			}
+		}
+		before = *head;
+		*head = (*head)->next;
 	}
-	while (temp->next != NULL)
+	if (*head)
 	{
-		if (newNode->n < temp->n)
-		{
-			newNode->next = temp;
-			*head = newNode;
-			return (newNode);
-		}
-		if (((newNode->n > temp->n) && (newNode->n < (temp->next)->n)) ||
-		    (newNode->n == temp->n))
-		{
-			newNode->next = temp->next;
-			temp->next = newNode;
-			return (newNode);
-		}
-		temp = temp->next;
+		before->next = new;
+		new->next = tmp;
 	}
-	/* if new node is greatest and never inserted, insert now */
-	temp->next = newNode;
-	return (newNode);
+	else if (*head == NULL)
+	{
+		tmp_num = (listint_t *)malloc(sizeof(listint_t));
+		if (tmp_num == NULL)
+			return (NULL);
+		tmp_num->n = (*head)->n;
+		tmp_num->next = new;
+		new->next = NULL;
+	}
+	*head = first;
+	return (new);
 }

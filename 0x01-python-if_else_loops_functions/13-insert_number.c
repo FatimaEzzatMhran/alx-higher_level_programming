@@ -3,43 +3,43 @@
 listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *temp = *head;
-	listint_t *new = NULL;
+	listint_t *newNode = NULL;
 
 	if (!head)
 		return (NULL);
 
-	
-	new = malloc(sizeof(listint_t));
-	if (new == NULL)
+	/* malloc new node */
+	newNode = malloc(sizeof(listint_t));
+	if (newNode == NULL)
 		return (NULL);
-	new->n = number;
-	new->next = NULL;
+	newNode->n = number;
+	newNode->next = NULL;
 
-	
+	/* if no linked list, insert node as the only member */
 	if (*head == NULL)
 	{
-		*head = new;
+		*head = newNode;
 		(*head)->next = NULL;
-		return (new);
+		return (newNode);
 	}
 	while (temp->next != NULL)
 	{
-		if (new->n < temp->n)
+		if (newNode->n < temp->n)
 		{
-			new->next = temp;
-			*head = new;
-			return (new);
+			newNode->next = temp;
+			*head = newNode;
+			return (newNode);
 		}
-		if (((new->n > temp->n) && (new->n < (temp->next)->n)) ||
-		    (new->n == temp->n))
+		if (((newNode->n > temp->n) && (newNode->n < (temp->next)->n)) ||
+		    (newNode->n == temp->n))
 		{
-			new->next = temp->next;
-			temp->next = new;
-			return (new);
+			newNode->next = temp->next;
+			temp->next = newNode;
+			return (newNode);
 		}
 		temp = temp->next;
 	}
-	
-	temp->next = new;
-	return (new);
+	/* if new node is greatest and never inserted, insert now */
+	temp->next = newNode;
+	return (newNode);
 }

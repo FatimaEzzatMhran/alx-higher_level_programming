@@ -5,6 +5,7 @@ This is text indentation module.
 It has one function that takes one required parameter.
 """
 
+
 def text_indentation(text):
     """Print text with two new lines after each '.', '?' and ':'.
 

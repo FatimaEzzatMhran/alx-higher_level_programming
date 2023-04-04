@@ -2,9 +2,11 @@
 """
 This is the "Matrix divided" module.
 
-The matrix divided has one function that takew a list of lists(matrix) and divisor.
+The matrix divided has one function that take
+a list of lists(matrix) and divisor.
 All valid elements are divided by the divisor and returned as new matrix.
 """
+
 
 def matrix_divided(matrix, div):
     """Retrun a new matrix with all values divided by `div`.
@@ -23,23 +25,26 @@ def matrix_divided(matrix, div):
         A new matrix representing the division result.
     """
     if not isinstance(matrix, list):
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError("matrix must be a matrix (list of lists) of "
+                        "integers/floats")
 
-    if len(matrix) is 0:
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+    if len(matrix) == 0:
+        raise TypeError("matrix must be a matrix (list of lists) of "
+                        "integers/floats")
 
     if not all(len(row) > 0 for row in matrix):
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError("matrix must be a matrix (list of lists) of "
+                        "integers/floats")
 
     if not all(len(row) == len(matrix[0]) for row in matrix):
         raise TypeError("Each row of the matrix must have the same size")
-
     for row in matrix:
         if not isinstance(row, list):
-            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
-
+            raise TypeError("matrix must be a matrix (list of lists) of "
+                            "integers/floats")
         if not all(isinstance(x, (int, float)) for x in row):
-            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+            raise TypeError("matrix must be a matrix (list of lists) of "
+                            "integers/floats")
 
     if div == 0:
         raise ZeroDivisionError("division by zero")
@@ -51,3 +56,4 @@ def matrix_divided(matrix, div):
         raise TypeError("div must be a number")
 
     return ([list(map(lambda x: round(x / div, 2), row)) for row in matrix])
+

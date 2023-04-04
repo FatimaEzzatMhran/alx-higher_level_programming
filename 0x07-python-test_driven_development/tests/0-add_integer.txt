@@ -72,4 +72,3 @@ Checking if a non-integer or non-float is passed for arg1 and arg2:
         >>> add_integer("hi", "there")
         Traceback (most recent call last):
         TypeError: a must be an integer
-

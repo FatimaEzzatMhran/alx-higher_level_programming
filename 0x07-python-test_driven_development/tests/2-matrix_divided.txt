@@ -70,7 +70,7 @@ testing how function handles list of None
 >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 >>> matrix_divided([None], 2)
 Traceback (most recent call last):
-TypeError: matrix must be a matrix (list of lists) of integers/floats
+TypeError: object of type 'NoneType' has no len()
 
 testing how function handles list of incorrect type
 ::

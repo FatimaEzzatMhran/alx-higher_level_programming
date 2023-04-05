@@ -56,4 +56,3 @@ def matrix_divided(matrix, div):
         raise TypeError("div must be a number")
 
     return ([list(map(lambda x: round(x / div, 2), row)) for row in matrix])
-

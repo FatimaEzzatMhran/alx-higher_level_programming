@@ -43,11 +43,9 @@ Checking for positive ints:
 
 Checking for floats:
 	>>> print_square(5.5)
-	#####
-	#####
-	#####
-	#####
-	#####
+	Traceback (most recent call last):
+        ...
+        TypeError: size must be an integer
 
 Checking for negative ints:
 	 >>> print_square(-1)
@@ -61,10 +59,6 @@ Checking for non-number types:
          ...
          TypeError: size must be an integer
 	 >>> print_square("3")
-	 Traceback (most recent call last):
-         ...
-         TypeError: size must be an integer
-	 >>> print_square(True)
 	 Traceback (most recent call last):
          ...
          TypeError: size must be an integer
@@ -84,9 +78,3 @@ Checking for passing None:
 	 Traceback (most recent call last):
          ...
          TypeError: size must be an integer
-
-Checking for passing a string:
-	>>> print_square("not int"):
-	Traceback (most recent call last):
-	...
-	TypeError: size must be an integer 

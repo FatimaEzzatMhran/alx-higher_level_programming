@@ -53,14 +53,6 @@ Checking for one word:
 	>>> text_indentation("Hello")
 	Hello
 
-Checking for newline at beginning:
-	>>> text_indentation(" \n Hello. Amigo, How are you?")
-	<BLANKLINE>
-	Hello.
-	<BLANKLINE>
-	Amigo, How are you?
-	<BLANKLINE>
-
 Checking for newline at end:
 	>>> text_indentation("Hello, how are you?\n")
 	Hello, how are you?

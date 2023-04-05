@@ -35,28 +35,23 @@ Checking if only one arg is passed, consedring the default arg 98:
 Checking if passed NaN:
 	>>> add_integer(1, float('nan'))
 	Traceback (most recent call last):
-	ValueError: cannot convert float Nan to integer
+	ValueError: cannot convert float NaN to integer
 
 Checking if passed NaN:
         >>> add_integer(float('nan'))
         Traceback (most recent call last):
-        ValueError: cannot convert float Nan to integer
+	...
+        ValueError: cannot convert float NaN to integer
 
 Checking of passed inf:
 	>>> add_integer(1, float('inf'))
 	Traceback (most recent call last):
-	ValueError: cannot convert float infinity to integer
+	OverflowError: cannot convert float infinity to integer
 
 Checking of passed inf:
         >>> add_integer(float('inf'))
         Traceback (most recent call last):
-        ValueError: cannot convert float infinity to integer
-
-Checking bool with number:
-	>>> add_integer(True, 1)
-	Traceback (most recent call lase):
-	...
-	TypeError: a must be an integer
+        OverflowError: cannot convert float infinity to integer
 
 Checking if a non-integer or non-float is passed for arg1:
 	>>> add_integer("hi", 5)

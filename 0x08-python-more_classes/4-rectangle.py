@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This is the "2-rectangle" module.
+This is the "4-rectangle" module.
 
 It provides a rectangle class with attributes: width and height.
 And it provideds methods to calculate area and perimiter.

@@ -74,10 +74,12 @@ class Rectangle:
         The rectangle is represented with # character.
         """
         rectan = ""
-        if self.__width == 0 or self.__height == 0:
-            return rectan
         for i in range(self.__height):
-            rectan += ("#" * self.__width)
+            for j in range(self.__width):
+                try:
+                    rectan += str(self.print_symbol)
+                except Exception:
+                    rectan += type(self).print_symbol
             if i != self.__height - 1:
                 rectan += "\n"
         return rectan

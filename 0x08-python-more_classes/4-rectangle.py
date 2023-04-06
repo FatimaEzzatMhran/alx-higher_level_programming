@@ -9,7 +9,7 @@ And it provideds methods to calculate area and perimiter.
 
 class Rectangle:
     """Rectangle class with attributes: width and height, and
-    methods to calculate area, perimiter, print, str.
+    methods to calculate area, perimiter, print, str, repr.
     """
 
     def __init__(self, width=0, height=0):

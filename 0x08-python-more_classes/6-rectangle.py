@@ -9,8 +9,12 @@ And it provideds methods to calculate area and perimiter.
 
 class Rectangle:
     """Rectangle class with attributes: width and height, and
-    methods to calculate area, perimiter, print, str.
+    methods to calculate area, perimiter, print, str, repr, del
+    and public class attribute (number_of_instances) that keeps
+    track of number of instances.
     """
+
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
         """Initialization of a new Rectangle.
@@ -21,6 +25,7 @@ class Rectangle:
         """
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -81,3 +86,4 @@ class Rectangle:
     def __del__(self):
         """print a message when an instance of a rectangle is deleted."""
         print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1

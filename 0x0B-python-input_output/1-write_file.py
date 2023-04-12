@@ -1,4 +1,4 @@
-#!/ust/bin/python3
+#!/usr/bin/python3
 """Contains one function called the write_file function."""
 
 
@@ -12,4 +12,5 @@ def write_file(filename="", text=""):
         The number of chars writtem.
     """
     with open(filename, "w", encoding="utf-8") as f:
-        return (f.write(text))
+        chars_written = f.write(text)
+        return (chars_written)

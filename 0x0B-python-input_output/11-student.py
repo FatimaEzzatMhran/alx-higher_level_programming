@@ -27,3 +27,15 @@ class Student:
             return {j: getattr(self, j) for j in attrs if hasattr(self, j)}
         else:
             return self.__dict__
+
+    def reload_from_json(self, json):
+        """Replaces all attributes of Student instance.
+
+        Args:
+            json: a dict the holds key/value pairs.
+        """
+        for key in json:
+            try:
+                setattr(self, key, json[key])
+            except FileNotFoundError:
+                pass

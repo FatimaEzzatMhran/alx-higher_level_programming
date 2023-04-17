@@ -2,6 +2,7 @@
 """This module contains a class named ``Base``."""
 import json
 
+
 class Base:
     """
     class Base: will be the base of all other classes in this project.
@@ -67,5 +68,3 @@ class Base:
                 return [cls.create(**obj) for obj in list_dict]
         except IOError:
             return []
-
-

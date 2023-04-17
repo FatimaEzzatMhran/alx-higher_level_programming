@@ -29,12 +29,10 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
-
     def __str__(self):
         """return a string representation of the square."""
-        return "[Square] ({}) {:d}/{:d} - {:d}".format(self.id,
-                                                self.x, self.y,
-                                                   self.height)
+        return "[Square] ({}) {:d}/{:d} - {:d}".format(
+                self.id, self.x, self.y, self.height)
 
     def update(self, *args, **kwargs):
         """assigns an arg to each attr(updates attr of an instance.
@@ -73,6 +71,7 @@ class Square(Rectangle):
                     self.x = value
                 elif key == "y":
                     self.y = value
+
     def to_dictionary(self):
         """returns the dictionary representation of a Square."""
         return {"id": self.id, "size": self.size,

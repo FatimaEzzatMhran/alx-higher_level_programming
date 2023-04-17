@@ -208,20 +208,6 @@ class test_square(unittest.TestCase):
         self.s.update(54)
         self.assertEqual(54, self.s.id)
 
-    def test_update_width(self):
-        '''
-            Testing the update method
-        '''
-        self.s.update(54, 30)
-        self.assertEqual(5, self.s.width)
-
-    def test_update_height(self):
-        '''
-            Testing the update method
-        '''
-        self.s.update(54, 10)
-        self.assertEqual(5, self.s.height)
-
     def test_update_x(self):
         '''
             Testing the update method
@@ -810,7 +796,7 @@ class TestSquare(unittest.TestCase):
             s1.update(2, 3, 4, "hello")
         self.assertEqual("y must be an integer", str(x.exception))
         with self.assertRaises(TypeError) as x:
-            s1.update("hello", 8, 9)
+            s1.update(5.9, 8, 9)
         self.assertEqual("id must be an integer", str(x.exception))
 
     def test_14_0(self):

@@ -18,7 +18,7 @@ if __name__ == '__main__':
     cur = db.cursor()
 
     """Execute SQL query -SELECT-"""
-    cur.exuecute("SELECT * FROM states ORDER BY id ASC")
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
 
     """Fetch all rows and print them"""
     rows = cur.fetchall()

@@ -20,9 +20,8 @@ if __name__ == "__main__":
     session = Session()
 
     """Query the database to retrieve all City objects"""
-    cities = session.query(State, City).filter(State.id == City.state_id)\
-            .order_by(City.id.asc())
+    cities = session.query(State, City).filter(State.id == City.state_id)
 
     """Print the results"""
     for city, state in cities.all():
-        print("{}: ({}) {}".format(state.name, city.id, city.name))
+        print(f"{state.name}: ({city.id}) {city.name}")

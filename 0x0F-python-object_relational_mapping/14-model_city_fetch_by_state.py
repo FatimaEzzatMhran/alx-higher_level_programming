@@ -25,4 +25,4 @@ if __name__ == "__main__":
 
     """Print the results"""
     for city, state in cities.all():
-        print(f"{state.name}: ({city.id}) {City.name}")
+        print(f"{state.name}: ({city.id}) {city.name}")

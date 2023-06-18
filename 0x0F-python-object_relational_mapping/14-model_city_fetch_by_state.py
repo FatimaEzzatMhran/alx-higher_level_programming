@@ -21,7 +21,9 @@ if __name__ == "__main__":
     session = Session()
 
     """Query the database to retrieve all City objects"""
-    results = session.query(City, State).filter(State.id == City.state_id).order_by(City.id.asc())
+    results = session.query(City, State)\
+        .filter(State.id == City.state_id)\
+        .order_by(City.id.asc())
 
     """Print the results"""
     for city, state in results.all():

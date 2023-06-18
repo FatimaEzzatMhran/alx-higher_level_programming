@@ -20,7 +20,7 @@ if __name__ == '__main__':
 
     """Execute SQL query -SELECT-"""
     cur.execute("SELECT * FROM states WHERE name LIKE \
-                BINARY %s ORDER BY id ASC", argv[4])
+                BINARY %s ORDER BY id ASC", (argv[4],))
 
     """Fetch all rows and print them"""
     rows = cur.fetchall()

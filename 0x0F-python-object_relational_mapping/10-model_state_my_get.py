@@ -19,11 +19,10 @@ if __name__ == "__main__":
     session = Session()
 
     """Query the database to retrieve all State objects"""
-    state = session.query(State).filter(State.name == sys.argv[4]) \
-        .order_by(State.id).first()
+    state = session.query(State).filter(State.name == sys.argv[4]).first()
 
     """Print the results"""
     if state:
         print(f"{state.id}")
     else:
-        print("Nothing")
+        print("Not found")

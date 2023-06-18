@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This script lists all cities from the database hbtn_0e_4_usa.
+This script takes in the name of a state as an argument
+and lists all cities of that state, using the database hbtn_0e_4_usa.
 """
 
 import MySQLdb
@@ -18,9 +19,9 @@ if __name__ == '__main__':
     cur = db.cursor()
 
     """Execute SQL query -SELECT-"""
-    cur.execute("SELECT cities.id, cities.name, states.name \
-                 FROM cities JOIN states ON cities.state_id = states.id
-                 ORDER BY cities.id ASC")
+    cur.execute("SELECT cities.name FROM states WHERE name LIKE \
+                BINARY %s ORDER BY id ASC", (argv[4],))
+
     """Fetch all rows and print them"""
     rows = cur.fetchall()
     for row in rows:

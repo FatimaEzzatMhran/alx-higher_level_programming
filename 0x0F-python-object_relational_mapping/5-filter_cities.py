@@ -19,8 +19,11 @@ if __name__ == '__main__':
     cur = db.cursor()
 
     """Execute SQL query -SELECT-"""
-    cur.execute("SELECT cities.name FROM states WHERE name LIKE \
-                BINARY %s ORDER BY id ASC", (argv[4],))
+    cur.execute("SELECT cities.name \
+                 FROM cities JOIN states \
+                 ON cities.state_id = states.id \
+                 WHERE states.name LIKE BINARY %s \
+                 ORDER BY cities.id ASC", (argv[4],))
 
     """Fetch all rows and print them"""
     rows = cur.fetchall()

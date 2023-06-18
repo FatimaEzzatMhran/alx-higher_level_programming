@@ -27,7 +27,7 @@ if __name__ == '__main__':
 
     """Fetch all cities associated with the state and print them"""
     all_cities = cur.fetchall()
-    print(", ".join([city[0] for city in all_cities])
+    print(", ".join([city[0] for city in all_cities]))
 
     """Close database cursor and database connection"""
     cur.close()

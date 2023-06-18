@@ -20,7 +20,8 @@ if __name__ == "__main__":
     session = Session()
 
     """Query the database to retrieve all State objects that contains a"""
-    states = session.query(State).filter(State.name.contains('a'))
+    states = session.query(State).filter(State.name.contains('a')) \
+             .order_by(State.id).all()
 
     """Print the results"""
     for instance in states:

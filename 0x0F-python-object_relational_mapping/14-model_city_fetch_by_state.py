@@ -13,9 +13,7 @@ from sqlalchemy import create_engine
 if __name__ == "__main__":
     """Access to the db to get the states"""
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
-                           .format(sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
-
-    Base.metadata.create_all(engine)
+                           .format(sys.argv[1], sys.argv[2], sys.argv[3]))
 
     """Create a session"""
     Session = sessionmaker(bind=engine)
@@ -27,4 +25,4 @@ if __name__ == "__main__":
 
     """Print the results"""
     for city, state in cities.all():
-        print(f"{state.name}: ({city.id}) {city.name}")
+        print("{}: ({}) {}".format(state.name, city.id, city.name))

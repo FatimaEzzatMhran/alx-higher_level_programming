@@ -25,10 +25,9 @@ if __name__ == '__main__':
                  WHERE states.name LIKE BINARY %s \
                  ORDER BY cities.id ASC", (argv[4],))
 
-    """Fetch all rows and print them"""
-    rows = cur.fetchall()
-    for row in rows:
-        print(row)
+    """Fetch all cities associated with the state and print them"""
+    all_cities = cur.fetchall()
+    print(", ".join([city[0] for city in all_cities])
 
     """Close database cursor and database connection"""
     cur.close()

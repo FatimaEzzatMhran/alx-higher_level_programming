@@ -19,7 +19,7 @@ if __name__ == "__main__":
     session = Session()
 
     """Query the database to retrieve all State objects"""
-    states = session.quere(State).order_by(State.id).all()
+    states = session.query(State).order_by(State.id).all()
 
     """Print the results"""
     for instance in states:

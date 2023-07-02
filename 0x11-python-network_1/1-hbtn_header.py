@@ -17,3 +17,4 @@ if __name__ == "__main__":
             x_request_id = headers.get('X-Request-Id')
             if x_request_id:
                 print(x_request_id)
+# or print(response.info().['X-Request-Id'])

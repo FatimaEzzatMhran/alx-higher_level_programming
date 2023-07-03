@@ -9,7 +9,7 @@ import urllib.parse
 import urllib.request
 
 
-if __nam__ = "__main__":
+if __name__ = "__main__":
     if len(sys.argv) >= 3:
         url = sys.argv[1]
         email = sys.argv[2]

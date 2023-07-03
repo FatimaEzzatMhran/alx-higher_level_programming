@@ -9,7 +9,7 @@ import urllib.parse
 import urllib.request
 
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     if len(sys.argv) >= 3:
         url = sys.argv[1]
         email = sys.argv[2]
@@ -18,6 +18,6 @@ if __name__ = "__main__":
 
         request = urllib.request.Request(url, data)
         with urllib.request.urlopen(request) as response:
-        content = response.read()
-        utf8_content = content.decode('utf-8')
-        print(utf8_content)
+            content = response.read()
+            utf8_content = content.decode('utf-8')
+            print(utf8_content)
